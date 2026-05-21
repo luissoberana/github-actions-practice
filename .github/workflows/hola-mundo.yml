@@ -1,4 +1,4 @@
-name: Mi Primer Workflow
+name: Flujo de pipelines de aprendizaje
 
 on:
   push:
@@ -8,5 +8,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Mostrar mensaje
+      - name: Paso 1 -  mostrar mensaje
         run: echo "Hola Mundo desde GitHub Actions"
+
+      - name: Paso 2 - mostrar fecha 
+        run: date
+
+      - name: Paso 3 - mostrar usuario actual
+        run: whoami
+
+      - name: Paso 4 - mostrar carpeta actual
+        run: pwd
+
+      - name: Paso 5 - mostrar sistema operativo
+        run: uname -a
+     
+   
