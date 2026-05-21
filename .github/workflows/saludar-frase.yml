@@ -1,0 +1,12 @@
+name: Mostrar Frase
+
+on:
+  push:
+
+jobs:
+  MostrarFrase:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Mostrar frase
+        run: echo "he logrado configurar mi primer workflow en GitHub Actions"
