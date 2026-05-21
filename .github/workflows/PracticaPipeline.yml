@@ -1,0 +1,26 @@
+name: Pipeline Proyecto Real
+
+on:
+  push:
+
+jobs:
+  proyecto-node:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Verificar versión de Node
+        run: node --version
+
+      - name: Verificar versión de npm
+        run: npm --version
+
+      - name: Mostrar archivos del proyecto
+        run: ls
