@@ -11,8 +11,8 @@ jobs:
       - name: Paso 1 - Mensaje inicial
         run: echo "Iniciando pipeline"
 
-      - name: Paso 2 - Comando inválido
-        run: comando-que-no-existe
+      - name: Paso 2 - Comando corregido
+        run: echo "Ahora el pipeline funciona"
 
       - name: Paso 3 - Este paso no debería ejecutarse
-        run: echo "Si ves esto, algo salió mal"
+        run: echo "Si ves esto, pasasteee"
