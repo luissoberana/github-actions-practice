@@ -17,7 +17,7 @@ jobs:
           node-version: 20
 
       - name: Instalar dependencias
-        run: npm install
+        run: npm comando-falso
 
       - name: Validación exitosa
         run: echo "Validación completada"
