@@ -1,26 +1,18 @@
-name: Flujo de pipelines de aprendizaje
+name: Pipeline con Error
 
 on:
   push:
 
 jobs:
-  saludar:
+  probar-error:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Paso 1 -  mostrar mensaje
-        run: echo "Hola Mundo desde GitHub Actions"
+      - name: Paso 1 - Mensaje inicial
+        run: echo "Iniciando pipeline"
 
-      - name: Paso 2 - mostrar fecha 
-        run: date
+      - name: Paso 2 - Comando inválido
+        run: comando-que-no-existe
 
-      - name: Paso 3 - mostrar usuario actual
-        run: whoami
-
-      - name: Paso 4 - mostrar carpeta actual
-        run: pwd
-
-      - name: Paso 5 - mostrar sistema operativo
-        run: uname -a
-     
-   
+      - name: Paso 3 - Este paso no debería ejecutarse
+        run: echo "Si ves esto, algo salió mal"
