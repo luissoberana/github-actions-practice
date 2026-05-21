@@ -37,11 +37,21 @@
 
 <body>
   <div class="container">
-    <h1>🚀 Mi primera web desplegada con GitHub Actions</h1>
-
+    <h1>🚀 Mi primera web desplegada</h1>
+     <h2>Versión 1.0.1</h2>
     <p>
       Cada push actualiza automáticamente este sitio usando CI/CD.
     </p>
   </div>
+
+  <p id="fecha"></p>
+
+<script>
+  const fecha = new Date();
+
+  document.getElementById("fecha").innerText =
+    "Último despliegue: " + fecha.toLocaleString();
+</script>
+
 </body>
 </html>
