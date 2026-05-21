@@ -10,48 +10,132 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #0f172a;
+      background: linear-gradient(to right, #0f172a, #1e293b);
       color: white;
       font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
     }
 
     .container {
-      max-width: 700px;
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
     }
 
     h1 {
       font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #38bdf8;
+      margin-bottom: 30px;
     }
 
     p {
-      font-size: 1.2rem;
       color: #cbd5e1;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .cards {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 50px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: #1e293b;
+      padding: 25px;
+      border-radius: 12px;
+      width: 250px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 15px 30px;
+      background-color: #38bdf8;
+      color: black;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #0ea5e9;
+    }
+
+    #fecha {
+      margin-top: 30px;
+      color: #94a3b8;
     }
   </style>
 </head>
 
 <body>
+
   <div class="container">
-    <h1>🚀 Mi primera web desplegada</h1>
-     <h2>Versión 1.0.1</h2>
+
+    <h1>🚀 Mi Web con GitHub Actions</h1>
+
+    <h2>Versión 2.0.0</h2>
+
     <p>
-      Cada push actualiza automáticamente este sitio usando CI/CD.
+      Este sitio se despliega automáticamente cada vez que hago push usando CI/CD con GitHub Actions.
     </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>⚙️ Automatización</h3>
+
+        <p>
+          GitHub Actions ejecuta workflows automáticamente después de cada push.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>📦 Deploy</h3>
+
+        <p>
+          El pipeline construye y publica esta web automáticamente en GitHub Pages.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🔥 CI/CD</h3>
+
+        <p>
+          Cada cambio que hago termina publicado online en segundos.
+        </p>
+      </div>
+
+    </div>
+
+    <a class="button" href="#">
+      Ver Pipeline
+    </a>
+
+    <p id="fecha"></p>
+
   </div>
 
-  <p id="fecha"></p>
+  <script>
+    const fecha = new Date();
 
-<script>
-  const fecha = new Date();
-
-  document.getElementById("fecha").innerText =
-    "Último despliegue: " + fecha.toLocaleString();
-</script>
+    document.getElementById("fecha").innerText =
+      "Última actualización visual: " + fecha.toLocaleString();
+  </script>
 
 </body>
 </html>
