@@ -14,13 +14,13 @@ jobs:
       - name: Instalar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Verificar versión de Node
         run: node --version
 
-      - name: Verificar versión de npm
-        run: npm --version
+      - name: Intentar instalar dependencias
+        run: npm install
 
-      - name: Mostrar archivos del proyecto
-        run: ls
+      - name: Este paso debería detenerse
+        run: echo "El pipeline continuó"
