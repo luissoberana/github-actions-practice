@@ -1,26 +1,31 @@
-name: Pipeline Proyecto Real
+name: Pipeline Inteligente
 
 on:
   push:
 
 jobs:
-  proyecto-node:
+  validar:
     runs-on: ubuntu-latest
 
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v4
 
-      - name: Instalar Node.js
+      - name: Configurar Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Verificar versión de Node
-        run: node --version
-
-      - name: Intentar instalar dependencias
+      - name: Instalar dependencias
         run: npm install
 
-      - name: Este paso debería detenerse
-        run: echo "El pipeline continuó"
+      - name: Validación exitosa
+        run: echo "Validación completada"
+
+  despliegue:
+    needs: validar
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Simular despliegue
+        run: echo "Desplegando aplicación..."
